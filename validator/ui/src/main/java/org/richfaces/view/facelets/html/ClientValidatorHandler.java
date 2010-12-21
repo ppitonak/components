@@ -21,39 +21,23 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
-package org.richfaces.javascript.client.message;
+package org.richfaces.view.facelets.html;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
-import com.gargoylesoftware.htmlunit.html.HtmlElement;
+import javax.faces.view.facelets.BehaviorConfig;
 
 /**
  * <p class="changed_added_4_0"></p>
  * @author asmirnov@exadel.com
  *
  */
-public class ClearMessageTest extends MessageTestBase {
-    
-    private static final String ERROR_MESSAGE = "Error";
-    
-    @Test
-    public void testClear() throws Exception {
-        setUpMessage();
-        sendMessage();
-        HtmlElement htmlElement = getMessageContentElement();
-        String text = htmlElement.asText();
-        assertFalse(text.contains(ERROR_MESSAGE));
+public class ClientValidatorHandler extends AjaxHandler {
+
+    /**
+     * <p class="changed_added_4_0"></p>
+     * @param config
+     */
+    public ClientValidatorHandler(BehaviorConfig config) {
+        super(config);
     }
 
-    @Override
-    protected String getMessageContent() {
-        
-        return "<li>Error</li>";
-    }
-    @Override
-    protected String getJavaScriptFunctionName() {
-        return "clearMessage";
-    }
 }
