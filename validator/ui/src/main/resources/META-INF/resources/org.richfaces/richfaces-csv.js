@@ -107,9 +107,8 @@
 		 	 }	
 	};
 
-	var getValue = function(id) {
+	var getValue = function(element) {
 		var value;
-		var element = rf.getDomElement(id);
 		if (valueExtractors[element.type]) {
 			value = valueExtractors[element.type](element);
 		} else if(undefined !== element.value ){
@@ -150,7 +149,8 @@
 			rf.Event.fire(window.document, rf.Event.MESSAGE_EVENT_TYPE, {'sourceId':componentId });
 		},
 		validate: function (event, id, element, params) {
-			var value = getValue(element || id);
+			var element = rf.getDomElement(element || id);
+			var value = getValue(element);
 			var convertedValue;
 			var converter = params.c;
 			rf.csv.clearMessage(id);
