@@ -62,6 +62,6 @@
         </connection>
         <developerConnection>scm:svn:https://svn.jboss.org/repos/richfaces/branches/4.0.X/ui/misc/dist/richfaces-ui-misc-ui
         </developerConnection>
-        <url>http://fisheye.jboss.org/browse/richfaces/branches/4.0.X/ui/misc/dist/richfaces-ui-misc-ui</url>
+        <url>https://github.com/richfaces/components</url>
     </scm>
 </project>
